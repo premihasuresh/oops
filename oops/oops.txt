@@ -1,0 +1,139 @@
+ OOPS Task
+  
+  
+1.https://github.com/rvsp/typescript-oops/blob/master/Practice/Movie.md
+
+
+The class Movie is stated below. An instance of class Movie represents a film. This class has the following three properties:
+
+title, which is a String representing the title of the movie
+studio, which is a String representing the studio that made the movie
+rating, which is a String representing the rating of the movie (i.e. PG­13, R, etc)
+a) Write a constructor for the class Movie, which takes a String representing the title of the movie, a String representing the studio, and a String representing the rating as its arguments, and sets the respective class properties to these values.
+
+b) The constructor for the class Movie will set the class property rating to "PG" as default when no rating is provided.
+
+c) Write a method getPG, which takes an array of base type Movie as its argument, and returns a new array of only those movies in the input array with a rating of "PG". You may assume the input array is full of Movie instances. The returned array need not be full.
+
+d) Write a piece of code that creates an instance of the class Movie with the title “Casino Royale”, the studio “Eon Productions”, and the rating “PG­13”
+
+
+
+Answer:
+class Movie{
+    constructor(title,studio,rating)
+    {
+        this.title=title;
+        this.studio=studio;
+        this.rating=rating;
+    }
+
+getPG(){
+    return this.rating="PG"
+}
+}
+
+let op=new Movie("Casino Royale","Eon Productions","PG­13")
+console.log(op.getPG())
+
+
+2.https://github.com/rvsp/typescript-oops/blob/master/Practice/class-circle.md
+
+
+let pi=3.142;
+class Circle{
+    constructor(radius,color)
+    {
+        this.radius=radius;
+        this.color=color;
+    }
+getRadius(){
+    return this.radius;
+   }
+setRadius(){
+    this.radius=radius1;
+}
+
+ getColor(){
+    return this.color;
+ }
+setColor(){
+  this.color=color1;
+}
+
+getArea(){
+   return pi*this.radius*this .radius;
+}
+getCircumference(){
+  return  2*pi*this.radius;
+}
+
+}
+
+let a=new Circle("1.0","red")
+
+
+console.log(a.color) //red
+console.log(a.getArea())  //3.142
+console.log(a.getCircumference()) // 6.284
+console.log(a.getRadius()) // 1.0
+
+
+3.Write a “person” class to hold all the details.
+
+class person{
+    constructor(name,age,phone,email,gender,height,weight,car,bike,house,children){
+
+        this.name=name;
+        this.age=age;
+        this.phone=phone;
+        this.email=email;
+        this.gender=gender;
+        this.height=height;
+        this.weight=weight;
+        this.car=car;
+        this.bike=bike;
+        this.house=house;
+        this.children=children;
+
+
+
+    }
+} let output=new person("Jill",42,9768543212,"jill@gmail.com","male","6ft",56,"Rolls Royce","Pulsar","Bunglow",5)
+  console.log(output)let price=100;
+class uber{
+    constructor(kilometer)
+    {
+        this.kilometer=kilometer;
+    }
+
+    getPrice(){
+        return this.kilometer*price;
+    }
+}let total=new uber(30);
+console.log(total.getPrice())
+  
+4.write a class to calculate the uber price.
+class UberPricing:
+    BASE_FARE = 2.50
+    COST_PER_MILE = 1.75
+    SURGE_MULTIPLIER = {
+        1: 1.0,
+        2: 1.5,
+        3: 2.0,
+        4: 2.5
+    }
+
+    def __init__(self, distance, surge_level=1):
+        self.distance = distance
+        self.surge_level = surge_level
+
+    def calculate_price(self):
+        if self.surge_level not in self.SURGE_MULTIPLIER:
+            raise ValueError("Invalid surge level")
+
+        surge_multiplier = self.SURGE_MULTIPLIER[self.surge_level]
+        total_fare = self.BASE_FARE + (self.distance * self.COST_PER_MILE)
+        final_fare = total_fare * surge_multiplier
+
+        return final_fare
